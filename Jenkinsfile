@@ -7,6 +7,10 @@ pipeline {
         CONTEXT_PATH = 'SpringDemo'
     }
 
+    tools {
+        maven 'Maven_3.9.9' // 👈 This must match the name you configured in Jenkins
+    }
+
     stages {
         stage('Build WAR') {
             steps {
