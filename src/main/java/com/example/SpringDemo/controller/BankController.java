@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,4 +23,8 @@ public class BankController {
     public List<Bank> getNearbyBanks(@RequestParam String zipcode) {
         return bankService.findBanksNearby(zipcode);
     }
+    @GetMapping("/welcome/{name}")
+	public String welcome(@PathVariable("name") String name) {
+		return name+", Welcome to Jenkins!!";
+	}
 }
